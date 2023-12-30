@@ -7,7 +7,7 @@
 
 typedef void (*reset_func_t)(void);
 
-void hr_init(int len, const reset_func_t *functions);
+void hr_init(size_t len, const reset_func_t *functions);
 void hr_reset_all();
 
 #endif // __HOTRELOAD_H
@@ -18,11 +18,10 @@ void hr_reset_all();
 static size_t reset_functions_len;
 static reset_func_t* reset_functions;
 
-void hr_init(int len, const reset_func_t *functions) 
+void hr_init(size_t len, const reset_func_t *functions) 
 {
 	reset_functions_len = len;
 
-	reset_func_t current_function;
 	reset_functions = malloc(sizeof(reset_func_t) * len);
 
 	for (size_t i = 0; i < len; i++) {
