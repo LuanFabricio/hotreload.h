@@ -3,11 +3,11 @@
 #include <stdint.h>
 
 #define __HOTRELOAD_IMPLEMENTATION
-#include "../hotreload.h"
+#include "../../hotreload.h"
 
 static uint32_t counter = 0;
 
-bool should_reset() 
+bool should_reset()
 {
 	counter++;
 	if (counter == 99999999) {
@@ -17,9 +17,9 @@ bool should_reset()
 	return false;
 }
 
-void __reset_func() 
+void __reset_func()
 {
-	printf("Testing from reset_func!\n");	
+	printf("Testing from reset_func!\n");
 }
 
 typedef void (*func_test2_t)(void);
