@@ -2,5 +2,5 @@
 
 void test2_a()
 {
-	printf("Hi!\n");
+	printf("Hi!!!\n");
 }
