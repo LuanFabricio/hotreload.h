@@ -13,6 +13,7 @@ void hr_init(size_t len, const reset_func_t *functions);
 void hr_reset_all();
 void hr_end();
 void* hr_reset_file(const char *filepath, void* shared_ptr);
+void* hr_reset_function(void* shared_ptr, const char* function_name);
 
 #endif // __HOTRELOAD_H
 
@@ -22,7 +23,7 @@ void* hr_reset_file(const char *filepath, void* shared_ptr);
 static size_t reset_functions_len;
 static reset_func_t* reset_functions;
 
-void hr_init(size_t len, const reset_func_t *functions) 
+void hr_init(size_t len, const reset_func_t *functions)
 {
 	reset_functions_len = len;
 
@@ -33,7 +34,7 @@ void hr_init(size_t len, const reset_func_t *functions)
 	}
 }
 
-void hr_reset_all() 
+void hr_reset_all()
 {
 	for (size_t i = 0; i < reset_functions_len; i++) {
 		reset_functions[i]();
