@@ -1,5 +1,3 @@
-# Demo
-
 # How to start?
 To compile the program you just need to run
 ```
